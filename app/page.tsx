@@ -1,8 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { ListingCard } from '@/components/listing-card';
+import Feed from '@/components/feed';
 
-const Homepage = () => {
+export type PageProps = {
+	params: { [key: string]: string | string[] | undefined };
+	searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+const Homepage = (props: PageProps) => {
 	return (
 		<div className="flex flex-1 overflow-hidden">
 			<aside className="w-64 border-r p-6">
@@ -29,11 +34,7 @@ const Homepage = () => {
 				</Link>
 			</aside>
 			<main className="flex-1 p-6">
-				<div className="container grid grid-cols-1 gap-12 bg-red-200 sm:grid-cols-2 md:grid-cols-4">
-					{Array.from({ length: 10 }).map((_, i) => (
-						<ListingCard key={i} />
-					))}
-				</div>
+				<Feed {...props.searchParams} />
 			</main>
 		</div>
 	);

@@ -1,10 +1,9 @@
-import "dotenv/config";
-import { PrismaClient } from "@prisma/client";
-import { withPulse } from "@prisma/extension-pulse";
+import { env } from '@/env.mjs';
+import { PrismaClient } from '@prisma/client';
+import { withPulse } from '@prisma/extension-pulse';
 
-const apiKey: string =
-	process.env.PULSE_API_KEY !== undefined ? process.env.PULSE_API_KEY : "";
-const prisma = new PrismaClient().$extends(withPulse({ apiKey: apiKey }));
+const apiKey: string = env.PULSE_API_KEY !== undefined ? env.PULSE_API_KEY : '';
+const prisma = new PrismaClient().$extends(withPulse({ apiKey }));
 
 async function main() {
 	const subscription = await prisma.user.subscribe();
@@ -14,7 +13,7 @@ async function main() {
 	}
 
 	for await (const event of subscription) {
-		console.log("just received an event:", event);
+		console.log('just received an event:', event);
 	}
 }
 
