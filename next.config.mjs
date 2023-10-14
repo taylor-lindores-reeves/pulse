@@ -59,17 +59,7 @@ const config = {
 		removeConsole: env.APP_ENV === "production"
 	},
 	experimental: {
-		serverActions: true,
-		optimizePackageImports: [
-			"resend",
-			"libphonenumber-js",
-			"pusher",
-			"pusher-js",
-			"mime-types",
-			"framer-motion",
-			"aws-sdk",
-			"next-auth"
-		]
+		serverActions: true
 	},
 	/** Linting and typechecking are already done as separate tasks in the CI pipeline */
 	eslint: {
