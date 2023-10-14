@@ -17,4 +17,5 @@ async function main() {
 		console.log("just received an event:", event);
 	}
 }
+
 main();
