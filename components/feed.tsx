@@ -22,7 +22,7 @@ const fetchAuctions = async ({ take = PAGE_SIZE, skip = 0 }: Inputs) => {
 	const result = await prisma.listing.findMany({
 		take,
 		skip,
-		orderBy: { createdAt: 'desc' },
+		orderBy: { price: 'asc' },
 	});
 
 	const total = await prisma.listing.count();

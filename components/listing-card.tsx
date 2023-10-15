@@ -33,18 +33,18 @@ export function ListingCard(props: Listing) {
 					{description}
 				</CardDescription>
 				<div className="mb-4">
-					<span className="text-lg font-semibold">Current Bid:</span>
+					<span className="text-lg font-semibold">Price:</span>
 					<span className="ml-2 text-2xl font-bold text-green-500">
 						{formatCurrency(price)}
 					</span>
 				</div>
-				<div className="mb-6">
+				{/* <div className="mb-6">
 					<CountdownTimer date={endDate} overtime={true} />
-				</div>
+				</div> */}
 			</CardContent>
 			<CardFooter className="bg-gray-50 p-6 dark:bg-zinc-900">
 				<Button className="w-full" variant="secondary">
-					Place a Bid
+					Buy Now
 				</Button>
 			</CardFooter>
 		</Card>

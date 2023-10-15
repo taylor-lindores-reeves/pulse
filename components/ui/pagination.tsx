@@ -1,5 +1,4 @@
 import Link from '@/components/ui/link';
-import { OffsetPaginationFunction } from '../feed';
 import { cn } from '@/lib/cn';
 
 interface PaginationProps {
@@ -33,10 +32,11 @@ export function Pagination(props: PaginationProps) {
 
 	const pages = getPagesToShow();
 
+	console.log({ props });
+
 	return (
 		<div className="flex items-center justify-center space-x-4">
 			<Link
-				aris-disabled={currentPage === 1}
 				className={cn(
 					'rounded-md border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50',
 					currentPage === 1 ? 'cursor-not-allowed bg-gray-300' : '',
@@ -59,7 +59,7 @@ export function Pagination(props: PaginationProps) {
 								? 'cursor-not-allowed bg-gray-300'
 								: '',
 							i === 0 ? 'rounded-l-md' : '',
-							// p === pages[pages.length] ? 'rounded-r-md' : '',
+							i === pages.length - 1 ? 'rounded-r-md' : '',
 						)}
 						href={`?page=${p}`}
 					>

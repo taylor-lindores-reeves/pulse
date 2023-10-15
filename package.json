@@ -15,6 +15,7 @@
   "dependencies": {
     "@prisma/client": "^5.4.2",
     "@prisma/extension-pulse": "^0.1.6",
+    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@t3-oss/env-core": "^0.7.0",
     "@t3-oss/env-nextjs": "^0.7.0",
