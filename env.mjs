@@ -1,5 +1,5 @@
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { createEnv } from "@t3-oss/env-nextjs";
+import { z } from "zod";
 
 export const env = createEnv({
 	/*
@@ -7,10 +7,12 @@ export const env = createEnv({
 	 * Will throw if you access these variables on the client.
 	 */
 	server: {
-		APP_ENV: z.enum(['development', 'production', 'test']),
+		APP_ENV: z.enum(["development", "production", "test"]),
 		BASE_URL: z.string().url(),
 		DATABASE_URL: z.string().url(),
 		PULSE_API_KEY: z.string(),
+		UPLOADTHING_SECRET: z.string(),
+		UPLOADTHING_APP_ID: z.string(),
 	},
 	/*
 	 * Environment variables available on the client (and server).
@@ -28,5 +30,7 @@ export const env = createEnv({
 		BASE_URL: process.env.BASE_URL,
 		DATABASE_URL: process.env.DATABASE_URL,
 		PULSE_API_KEY: process.env.PULSE_API_KEY,
+		UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
+		UPLOADTHING_APP_ID: process.env.UPLOADTHING_APP_ID,
 	},
 });

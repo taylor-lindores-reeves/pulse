@@ -9,11 +9,11 @@
 
 export function formatCurrency(
 	amount: number,
-	currency = 'GBP',
+	currency = "GBP",
 	showDecimals = true,
 ) {
-	const formatter = new Intl.NumberFormat('en-GB', {
-		style: 'currency',
+	const formatter = new Intl.NumberFormat("en-GB", {
+		style: "currency",
 		currency: currency,
 		useGrouping: true, // Use comma as thousand separator
 		minimumFractionDigits: showDecimals ? 2 : 0,
